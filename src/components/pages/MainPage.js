@@ -3,7 +3,7 @@ import {Container} from '@mui/material';
 import GoodsList from '../GoodsList';
 import {goods} from '../../data/goods';
 
-function Main() {
+function MainPage() {
     return (
         <Container maxWidth="md">
            <GoodsList data={goods}/>
@@ -11,4 +11,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default MainPage;

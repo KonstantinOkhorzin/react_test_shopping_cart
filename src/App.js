@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
-import Main from './components/pages/MainPage';
-import Basket from './components/pages/BasketPage';
+import MainPage from './components/pages/MainPage';
+import BasketPage from './components/pages/BasketPage';
 
 
 function App() {
@@ -10,9 +10,9 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/basket" element={<Basket />} />
-        <Route path="*" element={< Main />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/basket" element={<BasketPage />} />
+        <Route path="*" element={< MainPage />} />
       </Routes>
     </Router>
   );

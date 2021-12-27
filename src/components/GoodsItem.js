@@ -1,4 +1,5 @@
 import {Grid, Card, CardMedia, CardContent, Typography, CardActions, Button} from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const GoodsItem = ({poster, price, name}) => {
     
@@ -26,7 +27,7 @@ const GoodsItem = ({poster, price, name}) => {
                     <Typography variant="body1">Price: {price}$</Typography>
                     </CardContent>
                     <CardActions>
-                    <Button variant="contained">
+                    <Button variant="contained" startIcon={<ShoppingCartIcon />}>
                     add to cart
                     </Button>
                     </CardActions>

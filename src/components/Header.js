@@ -7,7 +7,7 @@ function Header() {
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-                    <Link to="/">LOGO</Link> 
+                    <Link to="/">Main</Link> 
                 </Typography >
                 <IconButton color='inherit'>
                     <Badge 

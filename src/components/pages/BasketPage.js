@@ -1,11 +1,15 @@
-import React from 'react';
+import { Container} from '@mui/material';
 
-function Basket() {
+import Basket from '../Basket';
+// import EmptyBasket from '../EmptyBasket';
+
+function BasketPage() {
     return (
-        <div>
-            Basket
-        </div>
+        <Container maxWidth="sm">
+            <Basket/>
+            {/* <EmptyBasket/> */}
+        </Container>
     );
 }
 
-export default Basket;
+export default BasketPage;
