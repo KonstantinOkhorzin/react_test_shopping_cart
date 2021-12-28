@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container} from '@mui/material';
+import { Container } from '@mui/material';
 
 import Basket from '../Basket';
 import EmptyBasket from '../EmptyBasket';
@@ -27,21 +27,25 @@ function BasketPage() {
             poster: "https://content.silpo.ua/sku/ecommerce/51/480x480wwm/519745_480x480wwm_30146c35-9360-f707-494d-2fd8bf5bf619.png",
             price: 8,
             count: 99
-        }  
+        }
     ]);
 
     const onDeleteItem = (id) => {
         setData(data.filter(item => item.id !== id))
-}
-   
+    };
+
+    const onClearCart = () => {
+        setData([])
+    };
+
 
     return (
         <Container maxWidth="sm">
             {(data.length)
-                 ? 
-                 <Basket data={data} onDeleteItem={onDeleteItem}/> 
-                 : 
-                 <EmptyBasket/>}
+                ?
+                <Basket data={data} onDeleteItem={onDeleteItem} onClearCart={onClearCart}/>
+                :
+                <EmptyBasket />}
         </Container>
     );
 }

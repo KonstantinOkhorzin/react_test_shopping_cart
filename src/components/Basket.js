@@ -3,7 +3,7 @@ import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 
 import BasketList from './BasketList';
 
-function Basket({data, onDeleteItem}) {
+function Basket({data, onDeleteItem, onClearCart}) {
     return (
         <>
             <Grid container spacing={2} my={1}>
@@ -16,6 +16,7 @@ function Basket({data, onDeleteItem}) {
                     item xs={6}
                     sx={{ display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
                     <Button
+                        onClick={onClearCart}
                         variant="outlined"
                         color="error"
                         endIcon={<RemoveShoppingCartIcon />}>
