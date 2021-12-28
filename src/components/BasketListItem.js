@@ -1,28 +1,30 @@
-import { ListItemIcon, ListItem, Typography, ListItemAvatar, Avatar, Box, Button } from '@mui/material';
-import { Close } from "@mui/icons-material";
+import { ListItem, Typography, ListItemAvatar, Avatar, Box, Button } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
-function BasketItem({ poster }) {
+function BasketListItem({name, poster, price, count, onDeleteItem}) {
     return (
         <ListItem
             sx={{
                 alignItems: 'center',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                borderBottom: '2px solid grey'
             }}>
 
             <Box
                 sx={{
                     display: 'flex',
                     alignItems: 'center',
+                    minWidth: '135px'
                 }}>
                 <ListItemAvatar>
-                    <Avatar alt="apple" src={poster} />
+                    <Avatar alt={name} src={poster} />
                 </ListItemAvatar>
 
                 <Typography
                     variant="h6"
                     component="h2" >
-                    Apple
+                    {name}
                 </Typography>
             </Box>
 
@@ -39,15 +41,10 @@ function BasketItem({ poster }) {
                 <Typography
                     variant="subtitle2"
                     component="div" 
-                    sx={{ minWidth: '20px',textAlign: 'center' }}>
-                    1
+                    sx={{ minWidth: '30px',textAlign: 'center' }}>
+                    {count + 'kg'}
                 </Typography>
-                <Typography
-                    sx={{ p: '0 2px'}}
-                    variant="subtitle2"
-                    component="span" >
-                    kg
-                </Typography>
+                
                 <Button
                     size="small"
                     variant="contained"
@@ -57,17 +54,20 @@ function BasketItem({ poster }) {
             </Box>
 
             <Typography
+                sx={{ minWidth: '25px', textAlign: 'center'}}
                 variant='subtitle2'
-                component="h2" >
-                10$
+                component="h2">
+                {price + '$'}
             </Typography>
 
-            <ListItemIcon 
-            sx={{ display:'flex', justifyContent: 'center' }}>
-                <Close />
-            </ListItemIcon>
+            <Button 
+                onClick={onDeleteItem}
+                sx={{ display:'flex', justifyContent: 'center' }}>
+                <DeleteIcon
+                color="error"/>
+            </Button>
         </ListItem>
     );
 }
 
-export default BasketItem;
+export default BasketListItem;

@@ -1,22 +1,16 @@
-import { List, Divider } from '@mui/material';
-import apple from '../resources/img/apple.png';
-import banana from '../resources/img/banana.png';
-import kiwi from '../resources/img/kiwi.png';
+import { List } from '@mui/material';
 
-import BasketItem from './BasketItem';
+import BasketListItem from './BasketListItem';
 
 
-function BasketList() {
+function BasketList({data, onDeleteItem}) {
 
 
     return (
         <List sx={{ width: '100%' }} >
-            <BasketItem key={1} poster={apple} />
-            <Divider />
-            <BasketItem key={2} poster={banana} />
-            <Divider />
-            <BasketItem key={3} poster={kiwi} />
-            <Divider />
+            {data.map((item) => (
+                    <BasketListItem key={item.id} {...item} onDeleteItem={() => onDeleteItem(item.id)}/>
+                ))}
         </List>
     );
 }

@@ -3,7 +3,7 @@ import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 
 import BasketList from './BasketList';
 
-function Basket() {
+function Basket({data, onDeleteItem}) {
     return (
         <>
             <Grid container spacing={2} my={1}>
@@ -25,8 +25,8 @@ function Basket() {
             </Grid>
             <Box
                 component="div"
-                sx={{ border: '1px solid grey', borderRadius: '5px' }}>
-                <BasketList />
+                sx={{ border: '2px solid grey', borderRadius: '5px' }}>
+                <BasketList data={data} onDeleteItem={onDeleteItem}/>
                 <Typography variant="h5" component="h2" sx={{ textAlign: 'center', p: '10px 0' }}>
                     ORDER TOTAL: 30$
                 </Typography>
