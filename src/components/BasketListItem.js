@@ -1,4 +1,4 @@
-import { ListItem, Typography, ListItemAvatar, Avatar, Box, Button } from '@mui/material';
+import { ListItem, Typography, ListItemAvatar, Avatar, Box, Button, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
@@ -60,12 +60,12 @@ function BasketListItem({name, poster, price, count, onDeleteItem}) {
                 {price + '$'}
             </Typography>
 
-            <Button 
+            <IconButton 
                 onClick={onDeleteItem}
                 sx={{ display:'flex', justifyContent: 'center' }}>
                 <DeleteIcon
                 color="error"/>
-            </Button>
+            </IconButton>
         </ListItem>
     );
 }

@@ -28,7 +28,10 @@ function Basket({data, onDeleteItem}) {
                 sx={{ border: '2px solid grey', borderRadius: '5px' }}>
                 <BasketList data={data} onDeleteItem={onDeleteItem}/>
                 <Typography variant="h5" component="h2" sx={{ textAlign: 'center', p: '10px 0' }}>
-                    ORDER TOTAL: 30$
+                    ORDER TOTAL:{' '}
+                                {data.reduce((acc, item) => {
+                                    return acc + item.price * item.count;
+                                }, 0)}$                           
                 </Typography>
             </Box>
         </>
