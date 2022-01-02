@@ -14,9 +14,7 @@ const GoodsItem = ({poster, price, name}) => {
                     component="img"
                     alt={name}
                     height="150"
-                    sx={{
-                        objectFit: "contain"
-                      }}
+                    sx={{objectFit: "contain"}}
                 />
                 <CardContent>
                     <Typography

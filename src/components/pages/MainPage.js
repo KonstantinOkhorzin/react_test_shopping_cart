@@ -1,12 +1,16 @@
-import {Container} from '@mui/material';
+
+import { Container } from '@mui/material';
 
 import GoodsList from '../GoodsList';
-import {goods} from '../../data/goods';
+import { goods } from '../../data/goods';
+import SearchAndSortPanel from '../SearchAndSortPanel';
 
 function MainPage() {
+
     return (
         <Container maxWidth="md">
-           <GoodsList data={goods}/>
+            <SearchAndSortPanel/>
+            <GoodsList data={goods} />
         </Container>
     );
 }

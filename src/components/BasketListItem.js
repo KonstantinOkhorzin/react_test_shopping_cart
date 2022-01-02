@@ -2,7 +2,8 @@ import { ListItem, Typography, ListItemAvatar, Avatar, Box, Button, IconButton }
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
-function BasketListItem({name, poster, price, count, onDeleteItem}) {
+function BasketListItem({name, poster, price, count, sale, onDeleteItem, onIncreaseCount, onDecreaseCount}) {
+
     return (
         <ListItem
             sx={{
@@ -33,6 +34,7 @@ function BasketListItem({name, poster, price, count, onDeleteItem}) {
                 component="div" 
                 sx={{ display: 'flex'}}>
                 <Button
+                    onClick={onDecreaseCount}
                     size="small"
                     variant="contained"
                     sx={{ minWidth: '5px',  p: '0px 10px' }}>
@@ -46,6 +48,7 @@ function BasketListItem({name, poster, price, count, onDeleteItem}) {
                 </Typography>
                 
                 <Button
+                    onClick={onIncreaseCount}
                     size="small"
                     variant="contained"
                     sx={{ minWidth: '5px',  p: '0px 10px' }}>
@@ -57,7 +60,7 @@ function BasketListItem({name, poster, price, count, onDeleteItem}) {
                 sx={{ minWidth: '25px', textAlign: 'center'}}
                 variant='subtitle2'
                 component="h2">
-                {price + '$'}
+                {price * count  + '$'}
             </Typography>
 
             <IconButton 

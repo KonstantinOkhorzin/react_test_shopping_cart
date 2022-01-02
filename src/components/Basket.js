@@ -3,7 +3,7 @@ import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 
 import BasketList from './BasketList';
 
-function Basket({data, onDeleteItem, onClearCart}) {
+function Basket({data, onDeleteItem, onClearCart, onIncreaseCount, onDecreaseCount}) {
     return (
         <>
             <Grid container spacing={2} my={1}>
@@ -27,7 +27,7 @@ function Basket({data, onDeleteItem, onClearCart}) {
             <Box
                 component="div"
                 sx={{ border: '2px solid grey', borderRadius: '5px' }}>
-                <BasketList data={data} onDeleteItem={onDeleteItem}/>
+                <BasketList data={data} onDeleteItem={onDeleteItem} onIncreaseCount={onIncreaseCount} onDecreaseCount={onDecreaseCount}/>
                 <Typography variant="h5" component="h2" sx={{ textAlign: 'center', p: '10px 0' }}>
                     ORDER TOTAL:{' '}
                                 {data.reduce((acc, item) => {
