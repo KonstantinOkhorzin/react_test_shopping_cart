@@ -1,5 +1,5 @@
 import {Grid} from '@mui/material';
-import GoodsItem from './GoodsItem';
+import GoodsItem from './GoodsListItem';
 
 
 

@@ -4,7 +4,7 @@ import { Grid } from '@mui/material';
 import Sort from '../components/Sort';
 import Search from '../components/Search';
 
-function SearchAndSortPanel() {
+function SearchAndSortPanel({value, onChange}) {
 
     return (
         <Grid container spacing={2} mt={2}>
@@ -12,7 +12,9 @@ function SearchAndSortPanel() {
                 <Search/>
             </Grid>
             <Grid item xs={12} md={6}>
-                <Sort/>
+                <Sort
+                    value={value}
+                    onChange={onChange}/>
             </Grid>
         </Grid>
     );

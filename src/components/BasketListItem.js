@@ -9,7 +9,8 @@ function BasketListItem({name, poster, price, count, sale, onDeleteItem, onIncre
             sx={{
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                borderBottom: '2px solid grey'
+                borderBottom: '2px solid grey',
+                flexWrap: 'wrap'
             }}>
 
             <Box
