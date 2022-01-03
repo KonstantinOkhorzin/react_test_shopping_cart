@@ -8,6 +8,7 @@ import SearchAndSortPanel from '../SearchAndSortPanel';
 function MainPage() {
     const [data, setData] = useState(goods)
     const [selectedSort, setSelectedSort] = useState('');
+    const [search, setSearch] = useState('');
 
     const sortData = (sort) => {
         setSelectedSort(sort);
@@ -25,13 +26,30 @@ function MainPage() {
         }
     }
 
+    const searchProduct = (data, search) => {
+        if (search.length === 0) {
+            return data;
+        }
+
+        return data.filter(item => {
+            return item.name.toLowerCase().includes(search.toLowerCase())
+        })
+    }
+
+    const onUpdateSearch = (search) => {
+        setSearch(search)
+    }
+
+    const visibleData = searchProduct(data, search);
+
     return (
         <Container maxWidth="md">
             <SearchAndSortPanel
+                onUpdateSearch={onUpdateSearch}
                 value={selectedSort}
                 onChange={sortData} />
             <GoodsList
-                data={data} />
+                data={visibleData} />
         </Container>
     );
 }
