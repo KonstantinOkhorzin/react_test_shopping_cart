@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { goods } from './data/goods';
@@ -12,8 +12,12 @@ function App() {
   const [data, setData] = useState(goods)
   const [sort, setSort] = useState('');
   const [search, setSearch] = useState('');
-  const [order, setOrder] = useState([]);
+  const [order, setOrder] = useState(JSON.parse(localStorage.getItem('order')) || []);
   const [isSnackOpen, setSnackOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('order', JSON.stringify(order))
+  }, [order]);
 
   const addToBasket = (item) => {
     const itemIndex = order.findIndex(orderItem => orderItem.id === item.id);
@@ -115,7 +119,7 @@ function App() {
             addToBasket={addToBasket}
             isSnackOpen={isSnackOpen}
             setSnackOpen={setSnackOpen} />} />
-        <Route path="/basket" element={<BasketPage order={order} onDeleteItem={onDeleteItem} onClearCart={onClearCart} onIncreaseQuantity={onIncreaseQuantity} onDecreaseQuantity={onDecreaseQuantity}/>} />
+        <Route path="/basket" element={<BasketPage order={order} onDeleteItem={onDeleteItem} onClearCart={onClearCart} onIncreaseQuantity={onIncreaseQuantity} onDecreaseQuantity={onDecreaseQuantity} />} />
         <Route path="*" element={< MainPage />} />
       </Routes>
     </Router>
