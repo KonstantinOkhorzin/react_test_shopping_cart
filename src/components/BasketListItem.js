@@ -4,14 +4,12 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 function BasketListItem({ name, poster, price, quantity, sale, onDeleteItem, onIncreaseQuantity, onDecreaseQuantity }) {
 
-    // const calcSale = (price, quantity) => {
-    //     let sale = Math.floor(quantity / 3) * 5;
-    //     return price * quantity - sale
-    // }
+    const calcSale = (price, quantity) => {
+            return price * quantity - Math.floor(quantity / 3) * 5; 
+    }
+    const totalItemSale = calcSale(price, quantity);
 
-    // const totalItemSale = calcSale(price, quantity);
-
-    const style = sale && quantity > 2 ? {color: '#D32F2F'} : null;
+    const style = sale && quantity > 2 ? { color: '#D32F2F' } : null;
 
     return (
         <ListItem
@@ -67,11 +65,11 @@ function BasketListItem({ name, poster, price, quantity, sale, onDeleteItem, onI
             </Box>
 
             <Typography
-            style={style}
-                sx={{ minWidth: '25px', textAlign: 'center'}}
+                style={style}
+                sx={{ minWidth: '25px', textAlign: 'center' }}
                 variant='subtitle2'
                 component="h2">
-                {price * quantity  + '$'}
+                {(sale ? totalItemSale : price*quantity) + '$'}
             </Typography>
 
             <IconButton

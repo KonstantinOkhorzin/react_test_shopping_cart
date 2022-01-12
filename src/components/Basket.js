@@ -31,7 +31,9 @@ function Basket({data, onDeleteItem, onClearCart, onIncreaseQuantity, onDecrease
                 <Typography variant="h5" component="h2" sx={{ textAlign: 'center', p: '10px 0' }}>
                     ORDER TOTAL:{' '}
                                 {data.reduce((acc, item) => {
-                                    return acc + item.price * item.quantity;
+                                    const {price, quantity, sale} = item;
+                                    const totalItemSale = price * quantity - Math.floor(quantity / 3) * 5;
+                                    return acc + (sale ? totalItemSale :  price * quantity);
                                 }, 0)}$                           
                 </Typography>
             </Box>
