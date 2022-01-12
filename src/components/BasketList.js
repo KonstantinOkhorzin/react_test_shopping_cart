@@ -3,12 +3,12 @@ import { List } from '@mui/material';
 import BasketListItem from './BasketListItem';
 
 
-function BasketList({data, onDeleteItem, onIncreaseQuantity, onDecreaseQuantity}) {
+function BasketList({order, onDeleteItem, onIncreaseQuantity, onDecreaseQuantity}) {
 
 
     return (
         <List sx={{ width: '100%' }} >
-            {data.map((item) => (
+            {order.map((item) => (
                     <BasketListItem 
                         key={item.id} 
                         {...item} 

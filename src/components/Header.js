@@ -2,7 +2,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { AppBar, Toolbar, Typography, IconButton, Badge } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({orderLen}) {
     return (
         <AppBar position="static">
             <Toolbar>
@@ -12,6 +12,7 @@ function Header() {
                 <IconButton color='inherit'>
                     <Badge 
                         color="secondary"
+                        badgeContent={orderLen}
                     >
                         <Link to="/basket"><ShoppingCartIcon/></Link> 
                     </Badge> 
