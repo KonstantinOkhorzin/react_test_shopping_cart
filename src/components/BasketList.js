@@ -3,7 +3,7 @@ import { List } from '@mui/material';
 import BasketListItem from './BasketListItem';
 
 
-function BasketList({data, onDeleteItem, onIncreaseCount, onDecreaseCount}) {
+function BasketList({data, onDeleteItem, onIncreaseQuantity, onDecreaseQuantity}) {
 
 
     return (
@@ -13,8 +13,8 @@ function BasketList({data, onDeleteItem, onIncreaseCount, onDecreaseCount}) {
                         key={item.id} 
                         {...item} 
                         onDeleteItem={() => onDeleteItem(item.id)} 
-                        onIncreaseCount={() => onIncreaseCount(item.id, item.count)}
-                        onDecreaseCount={() => onDecreaseCount(item.id, item.count)}/>
+                        onIncreaseQuantity={() => onIncreaseQuantity(item.id, item.quantity)}
+                        onDecreaseQuantity={() => onDecreaseQuantity(item.id, item.quantity)}/>
                 ))}
         </List>
     );

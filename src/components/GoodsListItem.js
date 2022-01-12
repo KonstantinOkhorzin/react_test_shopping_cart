@@ -1,7 +1,7 @@
 import { Grid, Card, CardMedia, CardContent, Typography, CardActions, Button, Rating, Box } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const GoodsListItem = ({ poster, price, name, rating }) => {
+const GoodsListItem = ({ poster, price, name, rating, quantity, id, sale, addToBasket}) => {
 
     return (
         <Grid item xs={12} sm={6} md={4}  >
@@ -31,7 +31,10 @@ const GoodsListItem = ({ poster, price, name, rating }) => {
                     </Box>
                 </CardContent>
                 <CardActions>
-                    <Button variant="contained" startIcon={<ShoppingCartIcon />}>
+                    <Button
+                    onClick={() => addToBasket({poster, price, name, id, sale, quantity})} 
+                    variant="contained" 
+                    startIcon={<ShoppingCartIcon />}>
                         add to cart
                     </Button>
                 </CardActions>

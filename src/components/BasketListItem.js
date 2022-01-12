@@ -2,7 +2,16 @@ import { ListItem, Typography, ListItemAvatar, Avatar, Box, Button, IconButton }
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
-function BasketListItem({name, poster, price, count, sale, onDeleteItem, onIncreaseCount, onDecreaseCount}) {
+function BasketListItem({ name, poster, price, quantity, sale, onDeleteItem, onIncreaseQuantity, onDecreaseQuantity }) {
+
+    // const calcSale = (price, quantity) => {
+    //     let sale = Math.floor(quantity / 3) * 5;
+    //     return price * quantity - sale
+    // }
+
+    // const totalItemSale = calcSale(price, quantity);
+
+    const style = sale && quantity > 2 ? {color: '#D32F2F'} : null;
 
     return (
         <ListItem
@@ -31,44 +40,45 @@ function BasketListItem({name, poster, price, count, sale, onDeleteItem, onIncre
             </Box>
 
 
-            <Box 
-                component="div" 
-                sx={{ display: 'flex'}}>
+            <Box
+                component="div"
+                sx={{ display: 'flex' }}>
                 <Button
-                    onClick={onDecreaseCount}
+                    onClick={onDecreaseQuantity}
                     size="small"
                     variant="contained"
-                    sx={{ minWidth: '5px',  p: '0px 10px' }}>
+                    sx={{ minWidth: '5px', p: '0px 10px' }}>
                     -
                 </Button>
                 <Typography
                     variant="subtitle2"
-                    component="div" 
-                    sx={{ minWidth: '30px',textAlign: 'center' }}>
-                    {count + 'kg'}
+                    component="div"
+                    sx={{ minWidth: '30px', textAlign: 'center' }}>
+                    {quantity + 'kg'}
                 </Typography>
-                
+
                 <Button
-                    onClick={onIncreaseCount}
+                    onClick={onIncreaseQuantity}
                     size="small"
                     variant="contained"
-                    sx={{ minWidth: '5px',  p: '0px 10px' }}>
+                    sx={{ minWidth: '5px', p: '0px 10px' }}>
                     +
                 </Button>
             </Box>
 
             <Typography
+            style={style}
                 sx={{ minWidth: '25px', textAlign: 'center'}}
                 variant='subtitle2'
                 component="h2">
-                {price * count  + '$'}
+                {price * quantity  + '$'}
             </Typography>
 
-            <IconButton 
+            <IconButton
                 onClick={onDeleteItem}
-                sx={{ display:'flex', justifyContent: 'center' }}>
+                sx={{ display: 'flex', justifyContent: 'center' }}>
                 <DeleteIcon
-                color="error"/>
+                    color="error" />
             </IconButton>
         </ListItem>
     );
