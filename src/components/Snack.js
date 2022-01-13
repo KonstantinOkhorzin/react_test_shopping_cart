@@ -1,10 +1,10 @@
 import React from 'react';
-import { Snackbar, Alert} from '@mui/material';
+import { Snackbar, Alert } from '@mui/material';
 
-function Snack({isOpen, handleClose}) {
+function Snack({ isOpen, handleClose }) {
 
     return (
-        <Snackbar 
+        <Snackbar
             open={isOpen}
             autoHideDuration={1000}
             onClose={handleClose}>

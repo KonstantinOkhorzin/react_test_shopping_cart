@@ -92,7 +92,6 @@ function App() {
     if (search.length === 0) {
       return data;
     }
-
     return data.filter(item => {
       return item.name.toLowerCase().includes(search.toLowerCase())
     })
@@ -119,8 +118,17 @@ function App() {
             addToBasket={addToBasket}
             isSnackOpen={isSnackOpen}
             setSnackOpen={setSnackOpen} />} />
-        <Route path="/basket" element={<BasketPage order={order} onDeleteItem={onDeleteItem} onClearCart={onClearCart} onIncreaseQuantity={onIncreaseQuantity} onDecreaseQuantity={onDecreaseQuantity} />} />
-        <Route path="*" element={< MainPage />} />
+        <Route
+          path="/basket"
+          element={<BasketPage
+            order={order}
+            onDeleteItem={onDeleteItem}
+            onClearCart={onClearCart}
+            onIncreaseQuantity={onIncreaseQuantity}
+            onDecreaseQuantity={onDecreaseQuantity} />} />
+        <Route
+          path="*"
+          element={< MainPage />} />
       </Routes>
     </Router>
   );

@@ -5,7 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 function BasketListItem({ name, poster, price, quantity, sale, onDeleteItem, onIncreaseQuantity, onDecreaseQuantity }) {
 
     const calcSale = (price, quantity) => {
-            return price * quantity - Math.floor(quantity / 3) * 5; 
+        return price * quantity - Math.floor(quantity / 3) * 5;
     }
     const totalItemSale = calcSale(price, quantity);
 
@@ -69,7 +69,7 @@ function BasketListItem({ name, poster, price, quantity, sale, onDeleteItem, onI
                 sx={{ minWidth: '25px', textAlign: 'center' }}
                 variant='subtitle2'
                 component="h2">
-                {(sale ? totalItemSale : price*quantity) + '$'}
+                {(sale ? totalItemSale : price * quantity) + '$'}
             </Typography>
 
             <IconButton

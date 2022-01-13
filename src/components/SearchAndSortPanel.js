@@ -1,4 +1,3 @@
-
 import { Grid } from '@mui/material';
 
 import Sort from '../components/Sort';

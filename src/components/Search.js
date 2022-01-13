@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextField} from '@mui/material';
+import { TextField } from '@mui/material';
 
 function Search(props) {
 
@@ -13,12 +13,12 @@ function Search(props) {
 
     return (
         <>
-            <TextField 
+            <TextField
                 value={search}
                 onChange={onUpdateSearch}
-                id="standard-basic" 
-                label="Search:" 
-                variant="standard" 
+                id="standard-basic"
+                label="Search:"
+                variant="standard"
                 fullWidth />
         </>
     );

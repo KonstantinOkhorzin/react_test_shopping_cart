@@ -1,7 +1,7 @@
 import { Grid, Card, CardMedia, CardContent, Typography, CardActions, Button, Rating, Box } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const GoodsListItem = ({ poster, price, name, rating, quantity, id, sale, addToBasket}) => {
+const GoodsListItem = ({ poster, price, name, rating, quantity, id, sale, addToBasket }) => {
 
     return (
         <Grid item xs={12} sm={6} md={4}  >
@@ -17,7 +17,7 @@ const GoodsListItem = ({ poster, price, name, rating, quantity, id, sale, addToB
                     sx={{ objectFit: "contain" }}
                 />
                 <CardContent
-                sx={{ display: "flex", justifyContent: "space-between"}}>
+                    sx={{ display: "flex", justifyContent: "space-between" }}>
                     <Box component="div">
                         <Typography
                             variant="h6"
@@ -32,9 +32,9 @@ const GoodsListItem = ({ poster, price, name, rating, quantity, id, sale, addToB
                 </CardContent>
                 <CardActions>
                     <Button
-                    onClick={() => addToBasket({poster, price, name, id, sale, quantity})} 
-                    variant="contained" 
-                    startIcon={<ShoppingCartIcon />}>
+                        onClick={() => addToBasket({ poster, price, name, id, sale, quantity })}
+                        variant="contained"
+                        startIcon={<ShoppingCartIcon />}>
                         add to cart
                     </Button>
                 </CardActions>

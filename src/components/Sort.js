@@ -1,7 +1,6 @@
-
 import { FormControl, MenuItem, Select, InputLabel } from '@mui/material';
 
-function Sort({value, onChange}) {
+function Sort({ value, onChange }) {
 
     return (
         <FormControl variant="standard" fullWidth>

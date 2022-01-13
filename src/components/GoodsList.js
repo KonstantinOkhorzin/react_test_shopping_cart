@@ -1,15 +1,15 @@
-import {Grid} from '@mui/material';
+import { Grid } from '@mui/material';
 import GoodsItem from './GoodsListItem';
 
 
 
-const GoodsList = ({data, addToBasket}) => {
+const GoodsList = ({ data, addToBasket }) => {
 
     return (
         <Grid container spacing={2} my={2}>
             {data.map((item) => (
-                    <GoodsItem key={item.id} {...item} addToBasket={addToBasket}/>
-                ))}  
+                <GoodsItem key={item.id} {...item} addToBasket={addToBasket} />
+            ))}
         </Grid>
     );
 };
