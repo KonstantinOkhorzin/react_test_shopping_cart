@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/KonstantinOkhorzin/react_test_shopping_cart/static/css/main.a85bb21f.css",
-    "main.js": "/KonstantinOkhorzin/react_test_shopping_cart/static/js/main.a7bcf716.js",
-    "index.html": "/KonstantinOkhorzin/react_test_shopping_cart/index.html",
-    "main.a85bb21f.css.map": "/KonstantinOkhorzin/react_test_shopping_cart/static/css/main.a85bb21f.css.map",
-    "main.a7bcf716.js.map": "/KonstantinOkhorzin/react_test_shopping_cart/static/js/main.a7bcf716.js.map"
+    "main.css": "/react_test_shopping_cart/static/css/main.a85bb21f.css",
+    "main.js": "/react_test_shopping_cart/static/js/main.c3f6de75.js",
+    "index.html": "/react_test_shopping_cart/index.html",
+    "main.a85bb21f.css.map": "/react_test_shopping_cart/static/css/main.a85bb21f.css.map",
+    "main.c3f6de75.js.map": "/react_test_shopping_cart/static/js/main.c3f6de75.js.map"
   },
   "entrypoints": [
     "static/css/main.a85bb21f.css",
-    "static/js/main.a7bcf716.js"
+    "static/js/main.c3f6de75.js"
   ]
 }
