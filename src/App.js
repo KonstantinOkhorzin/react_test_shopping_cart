@@ -104,7 +104,7 @@ function App() {
   const visibleData = searchProduct(data, search);
 
   return (
-    <Router>
+    <Router basename='/react_test_shopping_cart'>
       <Header orderLen={order.length} />
       <Routes>
         <Route
